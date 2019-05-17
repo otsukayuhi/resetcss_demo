@@ -660,16 +660,18 @@ P R E F O R M A T T E D T E X T
       </footer>
     </div>
     <script>
-      const selectCss = document.getElementById("selectCss");
-      const resetcss = document.getElementById("resetcss");
+      "use strict";
 
-      selectCss.addEventListener("change", () => {
-        const currentCss = selectCss.value;
+      var selectCss = document.getElementById("selectCss");
+      var resetcss = document.getElementById("resetcss");
+      selectCss.addEventListener("change", function() {
+        var currentCss = selectCss.value;
+
         if (currentCss === "noreset") {
           console.log(currentCss);
           resetcss.href = "";
         } else {
-          resetcss.href = `./${currentCss}.css`;
+          resetcss.href = "./".concat(currentCss, ".css");
         }
       });
     </script>
